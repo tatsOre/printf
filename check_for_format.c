@@ -10,20 +10,22 @@
  * Return: 0 if no errors in format are found, 1 if format is not the correct.
  */
 
-int check_for_format(char format, va_valist *valist, int p, int *count)
+int check_for_format(char format, va_list *valist, int p, int *count)
 {
+	int i = 0;
+
 	s_format special[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_int},
-		{'i', print_int}
+		{"c", print_char},
+		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int}
 	};
 
 	while (i < 4)
 	{
-		if (format == *special[j].c)
+		if (format == *special[i].c)
 		{
-			special[j].f(valist, p, count);
+			special[i].f(valist, p, count);
 			return (0);
 		}
 	}
