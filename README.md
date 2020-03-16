@@ -2,14 +2,14 @@
 ## Simulation of C printf function CHECK
 _printf is a function that produces output according to a format.
 
-Prototype:
+##### Prototype:
 ```bash
 int _printf(const char *format, ...);
 ```
 * *format* is a character string. The format string is composed of zero or more directives and conversion specifiers: *%c, %s, %, %d, %i
 * (...) are the variable number of input arguments *(optional)*.
 
-Returns:
+##### Returns:
 * the number of characters printed (excluding the null byte used to end output to strings).
 * write output to stdout, the standard output stream.
 
@@ -30,7 +30,7 @@ Returns:
 * *Input:*   _printf("This is another number: [%d]\n", 156);
 * *Output:*  This is another number: [156]
 
-**Porcentage (%):**
+**Percentage (%):**
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
 
@@ -42,7 +42,7 @@ Returns:
 
 * [Secrets of printf](https://www.cypress.com/file/54761/download)
 * [printf(3) - Linux man page](https://linux.die.net/man/3/printf)
-* [Variadic Functions] (https://www.gnu.org/software/libc/manual/html_node/Variadic-Functions.html)
+* [Variadic Functions](https://www.gnu.org/software/libc/manual/html_node/Variadic-Functions.html)
 * [Variable Arguments in C](https://www.tutorialspoint.com/cprogramming/c_variable_arguments.htm)
 * [Function Pointers](https://publications.gbdirect.co.uk//c_book/chapter5/function_pointers.html)
 * [typedef](https://publications.gbdirect.co.uk//c_book/chapter8/typedef.html)
@@ -53,6 +53,7 @@ Returns:
 * gcc 4.8.4
 * All files should be compiled with Ubuntu 14.04 LTS
 * The prototypes of all functions, structures and libraries are included in the header file called holberton.h
+* Global variables are not allowed
 
 ## Authorized functions and macros:
 
@@ -69,7 +70,7 @@ Returns:
 * [stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h)
 
 ## Compilation
-Code must be compiled this way:
+Code files must be compiled this way:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c
 ```
