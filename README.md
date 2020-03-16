@@ -9,20 +9,22 @@
 
 * gcc 4.8.4
 * All files should be compiled with Ubuntu 14.04 LTS
-*  The prototypes of all your functions and the prototype of the function _putchar should be included in your header file called dog.h
+* The prototypes of all functions, structures and libraries are included in the header file called holberton.h
 
-# In This Project We Should Learn
+# Authorized functions and macros:
 
-* When, why and how to use structures
-* How to use typedef
+* [write (man 2 write)](https://linux.die.net/man/2/write)
+* [malloc (man 3 malloc)](https://linux.die.net/man/3/malloc)
+* [free (man 3 free)](https://linux.die.net/man/3/free)
+* [va_start (man 3 va_start)](https://linux.die.net/man/3/va_start)
+* [va_end (man 3 va_end)](https://linux.die.net/man/3/va_end)
+* [va_copy (man 3 va_copy)](https://linux.die.net/man/3/va_copy)
+* [va_arg (man 3 va_arg)](https://linux.die.net/man/3/va_arg)
 
-## Why Use Structure
-Structure is a user-defined datatype in C language which allows us to combine data of different types together. Structure helps to construct a complex data type which is more meaningful. It is somewhat similar to an Array, but an array holds data of similar type only. But structure on the other hand, can store data of any type, which is practical more useful.
+# Compilation
+Code must be compiled this way:
+```bash
+$ gcc -Wall -Werror -Wextra -pedantic *.c
+```
 
-## How To Use Typedef
-
-The C programming language provides a keyword called typedef, which you can use to give a type a new name. Following is an example to define a term BYTE for one-byte numbers
-
-typedef unsigned char BYTE;
-After this type definition, the identifier BYTE can be used as an abbreviation for the type unsigned char, for example..
-
+## W
