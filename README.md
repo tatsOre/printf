@@ -1,7 +1,5 @@
 # _printf
 ## Simulation of C printf function CHECK
-##### Holberton School - Foundations - Low-level programming & Algorithm
-
 _printf is a function that produces output according to a format.
 
 Prototype:
@@ -24,17 +22,21 @@ Returns:
 * *Input:*   _printf("This is a string: [%s]\n", "Hello World");
 * *Output:*  This is a string: [Hello World]
 
-**Character (%i):**
+**Number (%i):**
 * *Input:*   _printf("This is a number: [%i]\n", 20);
 * *Output:*  This is a number: [20]
 
-**Character (%d):**
+**Number (%d):**
 * *Input:*   _printf("This is another number: [%d]\n", 156);
 * *Output:*  This is another number: [156]
 
-**Character (%):**
+**Porcentage (%):**
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
+
+**Literal(?)**
+* *Input:*   _printf("Hello World");
+* *Output:*  Hello World
 
 ## Resources
 
@@ -76,4 +78,5 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c
 * Andrés Bayona
 * Tatiana Orejuela
 
+##### Holberton School - Foundations - Low-level programming & Algorithm
 #####  Marzo, 2020.
