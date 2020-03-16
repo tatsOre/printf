@@ -21,7 +21,7 @@ int check_input(const char *format, va_list *original)
 				i++;
 			else if (format[i]) /* is a format spec? */
 				check_for_format
-					(format[i], &original, 0, n_prited);
+					(format[i], original, 0, n_printed);
 			else  /* is null? */
 				return (2);
 		}
@@ -54,7 +54,7 @@ int print_output(const char *format, va_list *copy)
 			if (format[i] == '%')
 				_putchar('%');
 			else
-				check_for_format(format[i], &copy, 1, n_prited);
+				check_for_format(format[i], copy, 1, n_printed);
 		}
 
 		i++;
