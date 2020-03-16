@@ -3,6 +3,7 @@
 /**
  * _puts - prints a string
  * @s: input string to be printed
+ * @count: printing bytes count.
  *
  * Return: void
  */

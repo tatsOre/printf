@@ -3,6 +3,8 @@
 /**
  * print_char - prints the next char in a va_list
  * @valist: the working va_list.
+ * @p: print indicator. 0 just to get value, 1 for printing the value.
+ * @count: bytes counting.
  * Return: void.
  */
 void print_char(va_list *valist, int p, int *count)
@@ -21,6 +23,8 @@ void print_char(va_list *valist, int p, int *count)
 /**
  * print_string - prints the next char array in a va_list
  * @valist: the working va_list.
+ * @p: print indicator. 0 just to get value, 1 for printing the value.
+ * @count: bytes counting.
  * Return: void.
  */
 void print_string(va_list *valist, int p, int *count)
@@ -40,6 +44,8 @@ void print_string(va_list *valist, int p, int *count)
 /**
  * print_int - prints the next integer vaue in a va_list
  * @valist: the working va_list.
+ * @p: print indicator. 0 just to get value, 1 for printing the value.
+ * @count: bytes counting.
  * Return: void.
  */
 void print_int(va_list *valist, int p, int *count)
