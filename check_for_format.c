@@ -2,7 +2,7 @@
 
 /**
  * check_for_format - checks format if belongs to a special char to be printed.
- * @format: input char which could describe the format in which next arg is printed.
+ * @format: char that could describe the format in which next arg is printed.
  * @p: printing selection. If 0 no printing in stdout is done. If 1 print.
  * @valist: arguments list to be formated.
  * @count: count of bytes if printed.
