@@ -23,6 +23,7 @@ int print_output(const char *format, va_list *);
 int check_for_format(char, va_list *, int, int *count);
 void handle_errors(int);
 void _puts(char *, int *);
+void _puts_error(char *);
 void print_number(int, int *);
 void print_char(va_list *, int, int *);
 void print_string(va_list *, int, int *);
