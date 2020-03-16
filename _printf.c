@@ -21,7 +21,7 @@ int _printf(const char *format, ...)
 	va_start(original, format);
 	va_copy(copy, original);
 
-	error = check_input(&original, format);
+	error = check_input(format, &original);
 
 	if (error != 0)
 	{
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 		exit(error);
 	}
 
-	n_printed = print_output(copy, format);
+	n_printed = print_output(format, &copy);
 
 	va_end(original);
 	va_end(copy);

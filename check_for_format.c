@@ -28,6 +28,7 @@ int check_for_format(char format, va_list *valist, int p, int *count)
 			special[i].f(valist, p, count);
 			return (0);
 		}
+		i++;
 	}
 
 	return (1);
