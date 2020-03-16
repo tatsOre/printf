@@ -13,10 +13,7 @@ int _printf(const char *format, ...)
 	int n_printed = 0, error = 0;
 
 	if (format == NULL || *format == '\0')
-	{
-		/*Print error here*/
-		return (0);
-	}
+		return (-1);
 
 	va_start(original, format);
 	va_copy(copy, original);
@@ -25,8 +22,7 @@ int _printf(const char *format, ...)
 
 	if (error != 0)
 	{
-		handle_errors(error);
-		exit(error);
+		return (error * -1);
 	}
 
 	n_printed = print_output(format, &copy);

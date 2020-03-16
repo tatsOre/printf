@@ -31,14 +31,18 @@ void print_string(va_list *valist, int p, int *count)
 {
 	char *s = va_arg(*valist, char *);
 
-	if (s == NULL)
-	{
-		_puts("(nil)", count);
-		return;
-	}
-
 	if (p == 1)
-		_puts(s, count);
+	{
+		if (s == NULL)
+		{
+			_puts("(null)", count);
+			return;
+		}
+		else
+		{
+			_puts(s, count);
+		}
+	}
 }
 
 /**
