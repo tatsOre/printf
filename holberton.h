@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /**
- * struct form_t - Struct form_t
+ * struct special_formats - Struct to select specifiers
  *
  * @c: data type
  * @f: The function associated
