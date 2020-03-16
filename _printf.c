@@ -31,5 +31,8 @@ int _printf(const char *format, ...)
 
 	n_printed = print_output(copy, format);
 
+	va_end(original);
+	va_end(copy);
+
 	return (n_printed);
 }
