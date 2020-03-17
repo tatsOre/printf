@@ -1,17 +1,20 @@
 # _printf
 ## Simulation of C printf function
-_printf is a function that produces output according to a format.
+_printf is a function that produces output according to a format. Writes at most size bytes (including the terminating null byte ('\0')) to str.
 
-##### Prototype:
+##### Synopsis:
 ```bash
 int _printf(const char *format, ...);
 ```
-* *format* is a character string. The format string is composed of zero or more directives and conversion specifiers: *%c, %s, %, %d, %i
-* (...) are the variable number of input arguments *(optional)*.
+* *format* is a character string. The format string is composed of zero or more directives and conversion specifiers:
+*%c, %s, %d, %i, %%, (custom conversion specifiers: %r, %R, %b).
+
+* (...) are the variable number of input arguments separated by comma *(optional)*.
 
 ##### Returns:
-* the number of characters printed (excluding the null byte used to end output to strings).
-* write output to stdout, the standard output stream.
+* Upon successful return, the number of characters printed (excluding the null byte used to end output to strings).
+* Write output to stdout, the standard output stream.
+* If an output error is encountered, a negative value (-1) is returned.
 
 ### Examples:
 **Character (%c):**
@@ -30,7 +33,7 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("This is another number: [%d]\n", 156);
 * *Output:*  This is another number: [156]
 
-**Percentage (%):**
+**Percentage (%%):**
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
 
@@ -38,16 +41,32 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("Hello World");
 * *Output:*  Hello World
 
+**Prints an unsigned decimal argument(%u):**
+* *Input:*   _printf("Unsigned wNeg (with Negative): [%u], -123");
+* *Output:*  Unsigned wNeg (with Negative): [4294967173]
+
+**Prints an unsigned int argument converted to octal notation (%o):**
+* *Input:*   _printf("98 in octal notation is: [%o], 98");
+* *Output:*  98 in octal notation is: [142]
+
+**Prints an unsigned int argument converted hexadecimal (x) notation (%x):**
+* *Input:*   _printf("2035495 in hexadecimal (x) notation is: [%x], 2035495");
+* *Output:*  2035495 in hexadecimal (x) notation is: [1f0f27]
+
+**Prints an unsigned int argument converted hexadecimal (X) notation (%X):**
+* *Input:*   _printf("2035495 in hexadecimal (X) notation is: [%X], 2035495");
+* *Output:*  2035495 in hexadecimal (X) notation is: [1F0F27]
+
 ### Custom conversion specifiers examples:
 **Prints a string in reverse (%r):**
 * *Input:*   _printf("String in [%r]\n", "reverse");
 * *Output:*  String in [esrever]
 
-**Prints a string in rot13 (%s):**
+**Prints a string in rot13 (%R):**
 * *Input:*   _printf("Hello World in rot13 is: [%R]\n", "Hello World");
 * *Output:*  Hello World in rot13 is: [Uryyb Jbeyq]
 
-**Unsigned int argument is converted to binary (%b):**
+**Unsigned int argument converted to binary (%b):**
 * *Input:*   _printf("98 in binary: [%b]\n", 98);
 * *Output:*  98 in binary: [1100010]
 
