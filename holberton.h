@@ -16,6 +16,17 @@ typedef struct special_formats
 	void (*f)(va_list *, int, int *);
 } s_format;
 
+/**
+ * union pointer - union variable to handle pointer byte to byte
+ * @ptr: void pointer to store a pointer.
+ * @c: char array to handle each byte in ptr.
+ */
+typedef union pointer
+{
+	void *ptr;
+	char c[sizeof(void *)];
+} my_pointer;
+
 int _printf(const char *, ...);
 int check_input(const char *format, va_list *);
 int print_output(const char *format, va_list *);
@@ -43,5 +54,7 @@ void print_uhex(va_list *, int, int *count);
 void p_uhex(unsigned int, int *);
 void print_UHEX(va_list *, int, int *count);
 void p_UHEX(unsigned int, int *);
+void print_pointer(va_list *, int, int *count);
+void p_ptr(char *, int *);
 
 #endif /* HOLBERTON_H */

@@ -26,6 +26,7 @@ int check_for_format(char format, va_list *valist, int p, int *count)
 		{"o", print_octal},
 		{"x", print_uhex},
 		{"X", print_UHEX},
+		{"p", print_pointer},
 		{NULL, NULL}
 	};
 
