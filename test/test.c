@@ -42,5 +42,8 @@ int main(void)
 	_printf("o%K\n");
 	printf("t%K\n");
 	*/
+
+	printf("%b\n", 98);
+	_printf("%b\n", 98);
 	return (0);
 }
