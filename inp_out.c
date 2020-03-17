@@ -21,14 +21,13 @@ int check_input(const char *format, va_list *original)
 			{
 				i++;
 			}
-			else if (format[i]) /* is a format spec? */
+			else if (format[i]) /* correct format spec? */
 			{
-				if (check_for_format(format[i], original, 0, &n_printed))
-					return (1);
+				check_for_format(format[i], original, 0, &n_printed);
 			}
-			else  /* is null? */
+			else /* error "%" */
 			{
-				return (2);
+				return (1);
 			}
 		}
 
@@ -67,11 +66,16 @@ int print_output(const char *format, va_list *copy)
 			}
 			else
 			{
-				check_for_format(format[i], copy, 1, &n_printed);
+				if (check_for_format(format[i], copy, 1, &n_printed))
+				{
+					_putchar('%');
+					_putchar(format[i]);
+					n_printed = n_printed + 2;
+				}
 			}
 		}
-
-		i++;
+		if (format[i] != '\0')
+			i++;
 	}
 
 	return (n_printed);
