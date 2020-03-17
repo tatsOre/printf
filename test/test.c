@@ -44,6 +44,9 @@ int main(void)
 	*/
 
 	printf("%b\n", 98);
-	_printf("%b\n", 98);
+	_printf("a%ba\n", 98);
+	_printf("%b\n", (unsigned int)INT_MAX + 1024);
+	_printf("%b\n", 4294967295);
+	_printf("%b\n", 0);
 	return (0);
 }
