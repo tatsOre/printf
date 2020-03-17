@@ -34,9 +34,22 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
 
-**Character string without conversion specifications**
+**Character string without conversion specifications:**
 * *Input:*   _printf("Hello World");
 * *Output:*  Hello World
+
+### Custom conversion specifiers examples:
+**Prints a string in reverse (%r):**
+* *Input:*   _printf("String in [%r]\n", "reverse");
+* *Output:*  String in [esrever]
+
+**Prints a string in rot13 (%s):**
+* *Input:*   _printf("Hello World in rot13 is: [%R]\n", "Hello World");
+* *Output:*  Hello World in rot13 is: [Uryyb Jbeyq]
+
+**Unsigned int argument is converted to binary (%b):**
+* *Input:*   _printf("98 in binary: [%b]\n", 98);
+* *Output:*  98 in binary: [1100010]
 
 ## Resources
 
@@ -83,11 +96,9 @@ int _printf(const char *format, ...);
 | `inp_out.c` | Check /and print input/output |
 | `man_3_printf` | _printf Man Page |
 | `print_number.c` | Auxiliary function |
-
-| :---: | :---:  |
-| `printf_advanced.c` | Advanced Task - Reverse a string |
+| `printf_advanced.c` | Advanced Task - Prints a reversed string |
 | `printf_advanced_base.c` | Advanced Task - Unsigned int argument is converted to binary |
-| `printf_advanced_rot13.c` | Advanced Task - Prints the rot13'ed string |
+| `printf_advanced_rot13.c` | Advanced Task - Prints rot13'ed string |
 
 ## Compilation
 Code files must be compiled this way:
