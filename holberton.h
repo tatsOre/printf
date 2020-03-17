@@ -17,15 +17,15 @@ typedef struct special_formats
 } s_format;
 
 int _printf(const char *, ...);
-int _putchar(char c);
 int check_input(const char *format, va_list *);
 int print_output(const char *format, va_list *);
 int check_for_format(char, va_list *, int, int *count);
-void _puts(char *, int *);
-void print_number(int, int *);
 void print_char(va_list *, int, int *);
+int _putchar(char c);
 void print_string(va_list *, int, int *);
+void _puts(char *, int *);
 void print_int(va_list *, int, int *);
+void print_number(int, int *);
 
 /* Advanced */
 
@@ -33,5 +33,7 @@ void print_string_reverse(va_list *, int, int *count);
 void print_rev(char *s, int *count);
 void print_string_rot13(va_list *, int, int *count);
 void rot13(char *s, int *count);
+void print_bin(va_list *, int, int *count);
+void p_bin(unsigned int, int *);
 
 #endif /* HOLBERTON_H */
