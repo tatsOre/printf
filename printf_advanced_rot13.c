@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_string_reverse - prints a string in reverse.
+ * print_string_rot13 - prints a string in rot13.
  * @valist: the working va_list.
  * @p: print indicator. 0 just to get value, 1 for printing the value.
  * @count: bytes counting.
@@ -26,28 +26,40 @@ void print_string_rot13(va_list *valist, int p, int *count)
 }
 
 /**
- * rot13 - Function that encode a string in rot13
- * @str: strings character to change
- * Return: encripted string
+ * rot13 - Function that encode and prints a string in rot13.
+ * @s: strings character to change.
+ * @count: bytes counting.
+ * Return: void.
  */
-
 void rot13(char *s, int *count)
 {
-	int ch, c;
-	char abc[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char abc13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int ch = 0;
 
-	for (ch = 0 ; s[ch] != '\0' ; ch++)
+	while (s[ch])
 	{
-		for (c = 0 ; abc[c] != '\0' ; c++)
+		if (s[ch] >= 'A' && s[ch] <= 'Z')
 		{
-			if (s[ch] == abc[c])
-			{
-				s[ch] = abc13[c];
-				_putchar(s[ch]);
-				*count = *count + 1;
-				break;
-			}
+			if (s[ch] >= 'A' && s[ch] <= 'M')
+				_putchar(s[ch] + 13);
+			else
+				_putchar(s[ch] - 13);
+
+			*count = *count + 1;
 		}
+
+		else if (s[ch] >= 'a' && s[ch] <= 'z')
+		{
+			if (s[ch] >= 'a' && s[ch] <= 'm')
+				_putchar(s[ch] + 13);
+			else
+				_putchar(s[ch] - 13);
+			*count = *count + 1;
+		}
+		else
+		{
+			_putchar(s[ch]);
+			*count = *count + 1;
+		}
+		ch++;
 	}
 }
