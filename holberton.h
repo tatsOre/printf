@@ -27,5 +27,11 @@ void print_char(va_list *, int, int *);
 void print_string(va_list *, int, int *);
 void print_int(va_list *, int, int *);
 
+/* Advanced */
+
+void print_string_reverse(va_list *, int, int *count);
+void print_rev(char *s, int *count);
+void print_string_rot13(va_list *, int, int *count);
+void rot13(char *s, int *count);
 
 #endif /* HOLBERTON_H */

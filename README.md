@@ -1,5 +1,5 @@
 # _printf
-## Simulation of C printf function CHECK
+## Simulation of C printf function
 _printf is a function that produces output according to a format.
 
 ##### Prototype:
@@ -34,7 +34,7 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
 
-**Literal(?)**
+** Character string without conversion specifications**
 * *Input:*   _printf("Hello World");
 * *Output:*  Hello World
 
@@ -55,7 +55,7 @@ int _printf(const char *format, ...);
 * The prototypes of all functions, structures and libraries are included in the header file called holberton.h
 * Global variables are not allowed
 
-## Authorized functions and macros:
+## Authorized functions and macros
 
 * [write (man 2 write)](https://linux.die.net/man/2/write)
 * [malloc (man 3 malloc)](https://linux.die.net/man/3/malloc)
@@ -65,11 +65,24 @@ int _printf(const char *format, ...);
 * [va_copy (man 3 va_copy)](https://linux.die.net/man/3/va_copy)
 * [va_arg (man 3 va_arg)](https://linux.die.net/man/3/va_arg)
 
-## Authorized libraries:
+## Authorized libraries
 
 * [stdarg.h](https://en.wikipedia.org/wiki/Stdarg.h)
+* [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h)
+* [unistd.h](https://en.wikipedia.org/wiki/Unistd.h)
 
-## Files                                                                                                                                                                                                                                                                                                                    | File  | Description |                                                                                                                                       | :---: | :---:  |                                                                                                                                            | `holberton.h` | include prototypes, strucs, libraries. |                                                                                                    | `printf.c` | WERE |                                                                                                                                         | `1.2` | HELLO |                                                                                                                                             | `2.0` | HELLO 2 |  
+## File
+| File  | Description |
+| :---: | :---:  |
+| `_printf.c` | Function that prints according to a given format|
+| `_putchar.c` | writes the character c to stdout |
+| `_puts.c` | prints a string |
+| `call_print_functions.c` | Auxiliary functions |
+| `check_for_format.c` | Check printf format specifiers |
+| `holberton.h` | Include prototypes, strucs, libraries. |
+| `inp_out.c` | Check /and print input/output |
+| `man_3_printf` | _printf Man Page |
+| `print_number.c` | Auxiliary function |
 
 ## Compilation
 Code files must be compiled this way:
@@ -78,8 +91,8 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c
 ```
 
 ## Authors
-* Andrés Bayona
-* Tatiana Orejuela
+* Andrés Bayona | [Github](https://github.com/AndrewB4y)
+* Tatiana Orejuela | [Github](https://github.com/tatsOre)
 
 ##### Holberton School - Foundations - Low-level programming & Algorithm
-#####  Marzo, 2020.
+#####  March, 2020.
