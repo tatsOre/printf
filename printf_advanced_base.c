@@ -30,6 +30,12 @@ void p_bin(unsigned int n, int *count)
 	int i;
 
 	i = 0;
+
+	if (n == 0)
+	{
+		binNum[i] = 0;
+		i++;
+	}
 	while (n > 0)
 	{
 		binNum[i] = n % 2;
