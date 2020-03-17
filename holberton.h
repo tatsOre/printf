@@ -35,5 +35,13 @@ void print_string_rot13(va_list *, int, int *count);
 void rot13(char *s, int *count);
 void print_bin(va_list *, int, int *count);
 void p_bin(unsigned int, int *);
+void print_octal(va_list *, int, int *count);
+void p_octal(unsigned int, int *);
+void print_uint(va_list *, int, int *count);
+void p_uint(unsigned int, int *);
+void print_uhex(va_list *, int, int *count);
+void p_uhex(unsigned int, int *);
+void print_UHEX(va_list *, int, int *count);
+void p_UHEX(unsigned int, int *);
 
 #endif /* HOLBERTON_H */

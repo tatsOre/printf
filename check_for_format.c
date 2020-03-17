@@ -22,6 +22,10 @@ int check_for_format(char format, va_list *valist, int p, int *count)
 		{"r", print_string_reverse},
 		{"R", print_string_rot13},
 		{"b", print_bin},
+		{"u", print_uint},
+		{"o", print_octal},
+		{"x", print_uhex},
+		{"X", print_UHEX},
 		{NULL, NULL}
 	};
 
