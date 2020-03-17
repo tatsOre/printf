@@ -21,10 +21,11 @@ int check_for_format(char format, va_list *valist, int p, int *count)
 		{"i", print_int},
 		{"r", print_string_reverse},
 		{"R", print_string_rot13},
-		{"b", print_bin}
+		{"b", print_bin},
+		{NULL, NULL}
 	};
 
-	while (i < 6)
+	while (special[i].c != NULL)
 	{
 		if (format == *special[i].c)
 		{
