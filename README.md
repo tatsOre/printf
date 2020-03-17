@@ -34,7 +34,7 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("Printing a percentage: [%%]\n");
 * *Output:*  Printing a percentage: [%]
 
-** Character string without conversion specifications**
+**Character string without conversion specifications**
 * *Input:*   _printf("Hello World");
 * *Output:*  Hello World
 
@@ -71,7 +71,7 @@ int _printf(const char *format, ...);
 * [stdlib.h](https://es.wikipedia.org/wiki/Stdlib.h)
 * [unistd.h](https://en.wikipedia.org/wiki/Unistd.h)
 
-## File
+## Files
 | File  | Description |
 | :---: | :---:  |
 | `_printf.c` | Function that prints according to a given format|
@@ -83,6 +83,11 @@ int _printf(const char *format, ...);
 | `inp_out.c` | Check /and print input/output |
 | `man_3_printf` | _printf Man Page |
 | `print_number.c` | Auxiliary function |
+
+| :---: | :---:  |
+| `printf_advanced.c` | Advanced Task - Reverse a string |
+| `printf_advanced_base.c` | Advanced Task - Unsigned int argument is converted to binary |
+| `printf_advanced_rot13.c` | Advanced Task - Prints the rot13'ed string |
 
 ## Compilation
 Code files must be compiled this way:
