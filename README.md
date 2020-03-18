@@ -7,7 +7,7 @@ _printf is a function that produces output according to a format. Writes at most
 int _printf(const char *format, ...);
 ```
 * *format* is a character string. The format string is composed of zero or more directives and conversion specifiers:
-*%c, %s, %d, %i, %%, (custom conversion specifiers: %r, %R, %b).
+%c, %s, %d, %i, %%, %o, %u, %x, %X, %p (custom conversion specifiers: %r, %R, %b).
 
 * (...) are the variable number of input arguments separated by comma *(optional)*.
 
@@ -134,6 +134,8 @@ Code files must be compiled this way:
 ```bash
 $ gcc -Wall -Werror -Wextra -pedantic *.c
 ```
+## Flowcharts
+https://drive.google.com/file/d/1V-SUvg7jqLFF5P20Prx_qDa7WkukhqG7/view?usp=sharing
 
 ## Authors
 * Andrés Bayona | [Github](https://github.com/AndrewB4y)
