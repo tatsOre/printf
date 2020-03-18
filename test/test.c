@@ -67,6 +67,15 @@ int main(void)
 	len = _printf("Address:[%p]\n", addr);
 	len2 = printf("Address:[%p]\n", addr);
 	printf("Len: %d\tLen2: %d\n", len,len2);
+	len = _printf("Address:[%p]\n", NULL);
+	len2 = printf("Address:[%p]\n", NULL);
+	printf("Len: %d\tLen2: %d\n", len,len2);
+	len = _printf("Address:[%p and %p]\n", addr, (void *)0x7f56ad2bf);
+	len2 = printf("Address:[%p and %p]\n", addr, (void *)0x7f56ad2bf);
+	printf("Len: %d\tLen2: %d\n", len,len2);
+	len = _printf("%p", NULL);
+	len2 = printf("%p", NULL);
+	printf("Len: %d\tLen2: %d\n", len,len2);
 
 	return (0);
 }

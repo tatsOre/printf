@@ -14,10 +14,16 @@ void print_pointer(va_list *valist, int p, int *count)
 
 	if (p == 1)
 	{
-		_putchar('0');
-		_putchar('x');
-		*count = *count + 2;
-		p_ptr(ptr, count);
+		if (ptr != NULL)
+		{
+			_putchar('0');
+			_putchar('x');
+			*count = *count + 2;
+			p_ptr(ptr, count);
+			return;
+		}
+
+		_puts("(nil)", count);
 	}
 }
 
@@ -29,7 +35,7 @@ void print_pointer(va_list *valist, int p, int *count)
  */
 void p_ptr(char *pointer, int *count)
 {
-	int i, first = 0;
+	int i, found_nz_byte = 0;
 	unsigned char c = 0;
 	my_pointer ptr;
 
@@ -37,20 +43,27 @@ void p_ptr(char *pointer, int *count)
 	for (i = sizeof(char *) - 1; i >= 0 ; i--)
 	{
 		c = ptr.c[i];
-		if (first == 0 && c != 0)
-			first = 1;
 
-		if (first == 1)
+		c = (ptr.c[i] >> 4) & 0xf;
+		if (found_nz_byte == 0 && c != 0)
+			found_nz_byte = 1;
+
+		if (found_nz_byte == 1)
 		{
-			c = (ptr.c[i] >> 4) & 0xf;
 			if (c > 9)
 				c = c - 10 + 'a';
 			else
 				c = c + '0';
 			_putchar(c);
 			*count = *count + 1;
+		}
 
-			c = ptr.c[i] & 0xf;
+		c = ptr.c[i] & 0xf;
+		if (found_nz_byte == 0 && c != 0)
+			found_nz_byte = 1;
+
+		if (found_nz_byte == 1)
+		{
 			if (c > 9)
 				c = c - 10 + 'a';
 			else
