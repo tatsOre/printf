@@ -5,11 +5,12 @@ _printf - format and print data
 #include <unistd.h> <stdarg.h> <stdlib.h> "holberton.h"
 
 int printf(const char *format, ...);
-.SH DESCRIPTION
-function that produces output according to a format, execute according to option:
 
-.RE
-.B CONVERSION SPECIFIERS:
+.SH DESCRIPTION
+function that produces output according to a format.  Writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted for output.  Execute according to option:
+
+.I
+.SS CONVERSION SPECIFIERS:
 .RS
 
 A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
@@ -26,12 +27,23 @@ The const char * argument is expected to be a pointer to an array of character t
 .IP o,u,x,X
 The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation. The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions.
 
-.RE
-.B CUSTOM CONVERSION SPECIFIERS
+.IP p
+The void * pointer argument is printed in hexadecimal (as if by %#x or %#lx).
+
+.I
+.SS CUSTOM CONVERSION SPECIFIERS
 .RS
+
+.IP b
+Decimal signed integer. The int argument is converted to binary notation.
 
 .IP r
 The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but n\ot including) a terminating null byte ('\0') in reverse order.
+
+
+.IP R
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but n\
+\ot including) a terminating null byte ('\0') in ROT13 format.
 
 
 .SH RETURN VALUE
@@ -40,7 +52,32 @@ Upon successful return, these functions return the number of characters printed 
 
 If an output error is encountered, a negative value (-1) is returned.
 
-.SH EXAMPLE
+
+.SH EXAMPLES:
+.RS
+.SS --------------
+.I
+.SS Character[%c]:
+.RS
+.SS --------------
+.SS Input         _printf("This is a char: [%c]", 'C');
+.SS Output	   This is a char: [C]
+.SS --------------
+.I
+.SS Literal String:
+.RS
+.SS --------------
+.SS Input	 _printf("Let's try to printf a simple sentence");
+.SS Output	  Let's try to printf a simple sentence
+.SS --------------
+.I
+.SS Integers[%i]:
+.RS
+.SS --------------
+.SS Input	 _printf("This is a number: [%i]", 20);
+.SS Output	  This is a number: [20]
+.SS --------------
+.RE
 
 .SH SEE ALSO
 .I printf(3)
