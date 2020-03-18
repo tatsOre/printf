@@ -41,28 +41,35 @@ int _printf(const char *format, ...);
 * *Input:*   _printf("Hello World");
 * *Output:*  Hello World
 
-**Prints an unsigned decimal argument(%u):**
+**Print an unsigned decimal argument (%u):**
 * *Input:*   _printf("Unsigned wNeg (with Negative): [%u], -123");
 * *Output:*  Unsigned wNeg (with Negative): [4294967173]
 
-**Prints an unsigned int argument converted to octal notation (%o):**
+**Print an unsigned int argument converted to octal notation (%o):**
 * *Input:*   _printf("98 in octal notation is: [%o], 98");
 * *Output:*  98 in octal notation is: [142]
 
-**Prints an unsigned int argument converted hexadecimal (x) notation (%x):**
+**Print an unsigned int argument converted hexadecimal (x) notation (%x):**
 * *Input:*   _printf("2035495 in hexadecimal (x) notation is: [%x], 2035495");
 * *Output:*  2035495 in hexadecimal (x) notation is: [1f0f27]
 
-**Prints an unsigned int argument converted hexadecimal (X) notation (%X):**
+**Print an unsigned int argument converted hexadecimal (X) notation (%X):**
 * *Input:*   _printf("2035495 in hexadecimal (X) notation is: [%X], 2035495");
 * *Output:*  2035495 in hexadecimal (X) notation is: [1F0F27]
 
+**Print a memory address (%p):**
+The argument shall be a pointer to void. The value of the pointer is converted to a sequence of printing characters, in an implementation-defined manner.
+* *Input:*   _printf("Address:[%p]\n", addr); //----> where 'addr' is addr = (void *)0x7ffe637541f0;
+* *Output:*  Address:[0x7ffe637541f0]
+
+
+
 ### Custom conversion specifiers examples:
-**Prints a string in reverse (%r):**
+**Print a string in reverse (%r):**
 * *Input:*   _printf("String in [%r]\n", "reverse");
 * *Output:*  String in [esrever]
 
-**Prints a string in rot13 (%R):**
+**Print a string in rot13 (%R):**
 * *Input:*   _printf("Hello World in rot13 is: [%R]\n", "Hello World");
 * *Output:*  Hello World in rot13 is: [Uryyb Jbeyq]
 
@@ -117,7 +124,10 @@ int _printf(const char *format, ...);
 | `print_number.c` | Auxiliary function |
 | `printf_advanced.c` | Advanced Task - Prints a reversed string |
 | `printf_advanced_base.c` | Advanced Task - Unsigned int argument is converted to binary |
+| `printf_advanced_base2.c` | Advanced Task - Print unsigned, octal, hexadecimal notation |
 | `printf_advanced_rot13.c` | Advanced Task - Prints rot13'ed string |
+| `printf_advanced_pointer.c` | Advanced Task - Prints a memory address in C |
+
 
 ## Compilation
 Code files must be compiled this way:
