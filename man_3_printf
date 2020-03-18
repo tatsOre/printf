@@ -1,17 +1,50 @@
-.TH man 2 "March 20" "0.1" "_printf man page"
+.TH _printf 1 "March 20" "version 1.0" "_printf man page"
 .SH NAME
-.B holberton
-- become a full-stack software engineer.
+_printf - format and print data
 .SH SYNOPSIS
-holberton [STUDENTNAME]
+#include <unistd.h> <stdarg.h> <stdlib.h> "holberton.h"
+
+int printf(const char *format, ...);
 .SH DESCRIPTION
-Holberton School is a project-based alternative to college for the next generation of software engineers.
-.SH OPTIONS
-.B holberton
-does not take any options. However, you can supply studentname.
+function that produces output according to a format, execute according to option:
+
+.RE
+.B CONVERSION SPECIFIERS:
+.RS
+
+A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
+
+.IP d,i
+Decimal signed integer. The int argument is converted to signed decimal notation. 
+
+.IP c
+Character. The int argument is converted to an unsigned char, and the resulting character is written.
+
+.IP s
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
+
+.IP o,u,x,X
+The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation. The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions.
+
+.RE
+.B CUSTOM CONVERSION SPECIFIERS
+.RS
+
+.IP r
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but n\ot including) a terminating null byte ('\0') in reverse order.
+
+
+.SH RETURN VALUE
+.RS
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
+
+If an output error is encountered, a negative value (-1) is returned.
+
+.SH EXAMPLE
+
 .SH SEE ALSO
-.I peerlearning(2), projectbased(2), fullstack(2), Betty(1)
+.I printf(3)
 .SH BUGS
-No known bugs.
-.SH AUTHOR
+Report _printf bugs to Andrés Bayona (andres.bayona@holbertonschool.com) or Tatiana Orejuela (tatiana.orejuela@holbertonschool.com)
+.SH AUTHORS
 Andrés Bayona, Tatiana Orejuela.
